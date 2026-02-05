@@ -107,6 +107,35 @@ body {
     min-height: 100vh;
 }
 
+/* Global Transition for Images */
+img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Image Hover Zoom Effect */
+.hero-image:hover img,
+.card:hover img,
+.glass:hover img,
+.case-study-card:hover img,
+.presence .card:hover img,
+.project-card:hover img,
+.news-card:hover img,
+.fb-card:hover img,
+.neon-card:hover img {
+    transform: scale(1.1);
+}
+
+.hero-image,
+.card,
+.glass,
+.case-study-card,
+.project-card,
+.news-card,
+.fb-card,
+.neon-card {
+    overflow: hidden;
+}
+
 /* Background Pop Wrappers (Blobs) */
 .bg-blobs {
     position: fixed;
@@ -557,7 +586,7 @@ section {
 }
 
 .glass:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.03);
     border-color: var(--accent-orange);
     box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
 }
@@ -1131,7 +1160,7 @@ nav {
 .card:hover {
     border-color: var(--accent-orange);
     box-shadow: 0 10px 30px rgba(249, 115, 22, 0.1);
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.03);
 }
 
 .card i {
@@ -1239,7 +1268,7 @@ nav {
 
 .pricing-card:hover {
     border-color: var(--accent-orange);
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.05);
     box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
 }
 
@@ -1546,7 +1575,7 @@ footer {
 }
 
 .tech-item:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.05);
     border-color: var(--accent-orange);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -1620,7 +1649,7 @@ footer {
 }
 
 .case-study-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.03);
     border-color: var(--accent-orange);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
@@ -1670,7 +1699,7 @@ footer {
 .fb-card:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: var(--accent-orange);
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.05);
 }
 
 .fb-card__category {
@@ -1816,7 +1845,7 @@ footer {
 
 .project-card:hover {
     border-color: var(--accent-orange);
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.03);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -1845,7 +1874,7 @@ footer {
 
 .news-card:hover {
     border-color: var(--accent-orange);
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.05);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -1889,7 +1918,18 @@ footer {
 }
 
 /* Ensure button is visible on gradient */
-/* Ensure button is visible on gradient */
+.newsletter-box .btn-primary {
+    background: #fff !important;
+    color: var(--primary-color) !important;
+    border: 2px solid #fff !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.newsletter-box .btn-primary:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 /* Neon Border Animation */
 .neon-card {
     position: relative;
@@ -1910,6 +1950,8 @@ footer {
 .neon-card:hover {
     background: #03e9f4 !important;
     color: #050801 !important;
+    transform: scale(1.02);
+    /* Subtle zoom for neon-card due to glow */
     box-shadow: 0 0 5px #03e9f4,
         0 0 25px #03e9f4,
         0 0 50px #03e9f4,
@@ -2088,7 +2130,7 @@ footer {
 }
 
 .card.glass:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.03);
     border-color: var(--accent-orange);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2),
         0 0 20px rgba(249, 115, 22, 0.1);
@@ -2724,5 +2766,71 @@ footer {
     100% {
         transform: translateX(120vw) translateY(50vh) rotate(25deg);
         opacity: 0;
+    }
+}
+
+/* --- Service Hero Wave Animation --- */
+.hero .wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+/* Blending Effect at the bottom */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    background: linear-gradient(to bottom, transparent, var(--bg-color));
+    z-index: 3;
+    pointer-events: none;
+}
+
+.hero .wave span {
+    content: "";
+    position: absolute;
+    width: 325vh;
+    height: 325vh;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #000;
+}
+
+.hero .wave span:nth-child(1) {
+    border-radius: 45%;
+    background: rgba(15, 23, 42, 1);
+    /* Using Dark Navy from theme */
+    animation: waveAnimate 5s linear infinite;
+}
+
+.hero .wave span:nth-child(2) {
+    border-radius: 40%;
+    background: rgba(15, 23, 42, 0.5);
+    animation: waveAnimate 10s linear infinite;
+}
+
+.hero .wave span:nth-child(3) {
+    border-radius: 42.5%;
+    background: rgba(15, 23, 42, 0.5);
+    animation: waveAnimate 15s linear infinite;
+}
+
+@keyframes waveAnimate {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
     }
 }
