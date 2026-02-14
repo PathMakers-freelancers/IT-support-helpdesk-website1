@@ -265,6 +265,74 @@
                 </div>
             </section>
 
+            <!-- System Sections -->
+            <section id="server-health" class="dashboard-section">
+                <div class="grid-2" style="padding: 0;">
+                    <div class="card glass">
+                        <h3>CPU Usage</h3>
+                        <div style="height: 10px; background: var(--border-color); border-radius: 5px; margin: 20px 0;">
+                            <div
+                                style="width: 45%; height: 100%; background: var(--primary-gradient); border-radius: 5px;">
+                            </div>
+                        </div>
+                        <span>45% across 16 cores</span>
+                    </div>
+                    <div class="card glass">
+                        <h3>Memory Usage</h3>
+                        <div style="height: 10px; background: var(--border-color); border-radius: 5px; margin: 20px 0;">
+                            <div style="width: 82%; height: 100%; background: #ef4444; border-radius: 5px;"></div>
+                        </div>
+                        <span>26.2GB / 32GB</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="backups" class="dashboard-section">
+                <div class="card glass">
+                    <h3>Backup Registry</h3>
+                    <p>Last automated backup: 2026-02-04 03:00 UTC</p>
+                    <button class="btn-primary" style="margin-top: 20px;">Run Full Backup Now</button>
+                </div>
+            </section>
+
+            <section id="integrations" class="dashboard-section">
+                <div class="grid-3" style="padding: 0;">
+                    <div class="card glass" style="text-align: center;">
+                        <i class="fab fa-slack" style="font-size: 2rem;"></i>
+                        <h4>Slack</h4>
+                        <span style="color: #10b981;">Connected</span>
+                    </div>
+                    <div class="card glass" style="text-align: center;">
+                        <i class="fab fa-aws" style="font-size: 2rem;"></i>
+                        <h4>AWS Cloud</h4>
+                        <span style="color: #10b981;">Connected</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- All Users Section -->
+            <section id="all-users" class="dashboard-section">
+                <div class="grid" style="padding: 0;">
+                    <div class="card glass">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div
+                                style="width: 50px; height: 50px; border-radius: 50%; background: var(--accent-orange); display: flex; align-items: center; justify-content: center; color: white;">
+                                JD</div>
+                            <div>
+                                <h4 style="margin: 0;">John Doe</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);">Premium User</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px; font-size: 0.9rem;">
+                            <p><i class="fas fa-envelope" style="font-size: 0.8rem;"></i> john@example.com</p>
+                            <p><i class="fas fa-map-marker-alt" style="font-size: 0.8rem;"></i> London, UK</p>
+                        </div>
+                        <button class="btn-secondary" style="width: 100%; margin-top: 20px;">View Profile</button>
+                    </div>
+                    <!-- More mock users... -->
+                </div>
+            </section>
+
             <!-- Manage Tickets Section -->
             <section id="manage-tickets" class="dashboard-section">
                 <div class="card glass" style="padding: 0; overflow: hidden;">
@@ -301,29 +369,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </section>
-
-            <!-- All Users Section -->
-            <section id="all-users" class="dashboard-section">
-                <div class="grid" style="padding: 0;">
-                    <div class="card glass">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div
-                                style="width: 50px; height: 50px; border-radius: 50%; background: var(--accent-orange); display: flex; align-items: center; justify-content: center; color: white;">
-                                JD</div>
-                            <div>
-                                <h4 style="margin: 0;">John Doe</h4>
-                                <span style="font-size: 0.8rem; color: var(--text-secondary);">Premium User</span>
-                            </div>
-                        </div>
-                        <div style="margin-top: 20px; font-size: 0.9rem;">
-                            <p><i class="fas fa-envelope" style="font-size: 0.8rem;"></i> john@example.com</p>
-                            <p><i class="fas fa-map-marker-alt" style="font-size: 0.8rem;"></i> London, UK</p>
-                        </div>
-                        <button class="btn-secondary" style="width: 100%; margin-top: 20px;">View Profile</button>
-                    </div>
-                    <!-- More mock users... -->
                 </div>
             </section>
 
@@ -370,51 +415,6 @@
                 <div class="card glass">
                     <h3>Access Control List (ACL)</h3>
                     <p>Manage permissions and security groups.</p>
-                </div>
-            </section>
-
-            <!-- System Sections -->
-            <section id="server-health" class="dashboard-section">
-                <div class="grid-2" style="padding: 0;">
-                    <div class="card glass">
-                        <h3>CPU Usage</h3>
-                        <div style="height: 10px; background: var(--border-color); border-radius: 5px; margin: 20px 0;">
-                            <div
-                                style="width: 45%; height: 100%; background: var(--primary-gradient); border-radius: 5px;">
-                            </div>
-                        </div>
-                        <span>45% across 16 cores</span>
-                    </div>
-                    <div class="card glass">
-                        <h3>Memory Usage</h3>
-                        <div style="height: 10px; background: var(--border-color); border-radius: 5px; margin: 20px 0;">
-                            <div style="width: 82%; height: 100%; background: #ef4444; border-radius: 5px;"></div>
-                        </div>
-                        <span>26.2GB / 32GB</span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="backups" class="dashboard-section">
-                <div class="card glass">
-                    <h3>Backup Registry</h3>
-                    <p>Last automated backup: 2026-02-04 03:00 UTC</p>
-                    <button class="btn-primary" style="margin-top: 20px;">Run Full Backup Now</button>
-                </div>
-            </section>
-
-            <section id="integrations" class="dashboard-section">
-                <div class="grid-3" style="padding: 0;">
-                    <div class="card glass" style="text-align: center;">
-                        <i class="fab fa-slack" style="font-size: 2rem;"></i>
-                        <h4>Slack</h4>
-                        <span style="color: #10b981;">Connected</span>
-                    </div>
-                    <div class="card glass" style="text-align: center;">
-                        <i class="fab fa-aws" style="font-size: 2rem;"></i>
-                        <h4>AWS Cloud</h4>
-                        <span style="color: #10b981;">Connected</span>
-                    </div>
                 </div>
             </section>
 
